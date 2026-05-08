@@ -351,6 +351,23 @@ function startSecurePlay() {
     }
 }
     
+    function setupSecurity() {
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden && !isFinished) {
+            violations++; // Menambah hitungan pelanggaran di latar belakang
+
+            // Cek apakah sudah mencapai batas maksimal (3 kali)
+            if (violations >= 3) { 
+                alert("Batas pelanggaran tercapai! Anda telah berpindah halaman sebanyak 3 kali. Ujian akan dihentikan dan jawaban Anda akan dikirim."); 
+                submitFinalData(); // Paksa kirim data
+            } else {
+                // Tampilkan popup peringatan untuk pelanggaran ke-1 dan ke-2
+                alert("PERINGATAN (" + violations + "/3): Dilarang pindah tab atau membuka aplikasi lain selama ujian berlangsung!");
+            }
+        }
+    });
+}
+    
     function calculateCurrentScore() {
         const sec = examData[currentSectionIdx];
         let score = 0;
