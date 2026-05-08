@@ -247,18 +247,21 @@
     ];
 
     function startExam() {
-        const name = document.getElementById('name').value;
-        const npm = document.getElementById('npm').value;
-        const cls = document.getElementById('class').value;
-        if (!name || !npm || !cls) return alert("Mohon lengkapi data login!");
-        userData = { name, npm, className: cls };
-        document.getElementById('display-info').innerText = `${name} (${npm}) - ${cls}`;
-        document.getElementById('login-page').classList.add('hidden');
-        document.getElementById('exam-page').classList.remove('hidden');
-        renderSection();
-        setupSecurity();
-    }
-
+    const name = document.getElementById('name').value;
+    const npm = document.getElementById('npm').value;
+    const cls = document.getElementById('class').value;
+    if (!name || !npm || !cls) return alert("Mohon lengkapi data login!");
+    
+    userData = { name, npm, className: cls };
+    document.getElementById('display-info').innerText = `${name} (${npm}) - ${cls}`;
+    document.getElementById('login-page').classList.add('hidden');
+    document.getElementById('exam-page').classList.remove('hidden');
+    
+    renderSection();
+    
+    // TAMBAHKAN BARIS INI AGAR DETEKSI AKTIF
+    setupSecurity(); 
+}
     function renderSection() {
     const sec = examData[currentSectionIdx];
     document.getElementById('section-title').innerText = sec.title;
@@ -353,16 +356,17 @@ function startSecurePlay() {
     
     function setupSecurity() {
     document.addEventListener("visibilitychange", () => {
+        // Jika tab disembunyikan dan ujian belum selesai
         if (document.hidden && !isFinished) {
-            violations++; // Menambah hitungan pelanggaran di latar belakang
+            violations++; // Tetap menghitung di variabel latar belakang
 
-            // Cek apakah sudah mencapai batas maksimal (3 kali)
-            if (violations >= 3) { 
-                alert("Batas pelanggaran tercapai! Anda telah berpindah halaman sebanyak 3 kali. Ujian akan dihentikan dan jawaban Anda akan dikirim."); 
-                submitFinalData(); // Paksa kirim data
+            if (violations >= 3) {
+                // Popup jika sudah maksimal
+                alert("Batas pelanggaran tercapai! Anda telah berpindah tab sebanyak 3 kali. Jawaban Anda akan dikirim otomatis.");
+                submitFinalData();
             } else {
-                // Tampilkan popup peringatan untuk pelanggaran ke-1 dan ke-2
-                alert("PERINGATAN (" + violations + "/3): Dilarang pindah tab atau membuka aplikasi lain selama ujian berlangsung!");
+                // Popup peringatan biasa
+                alert("PERINGATAN (" + violations + "/3): Dilarang pindah tab atau membuka aplikasi lain!");
             }
         }
     });
