@@ -251,17 +251,24 @@
     const name = document.getElementById('name').value;
     const npm = document.getElementById('npm').value;
     const cls = document.getElementById('class').value;
-    if (!name || !npm || !cls) return alert("Mohon lengkapi data login!");
-    
+
+    if (!name || !npm || !cls) {
+        alert("Mohon lengkapi data diri Anda!");
+        return;
+    }
+
+    // Simpan data ke variabel
     userData = { name, npm, className: cls };
-    document.getElementById('display-info').innerText = `${name} (${npm}) - ${cls}`;
+
+    // Tampilkan info di status bar
+    document.getElementById('display-info').innerText = `${name} | ${npm} | ${cls}`;
+
+    // Pindah halaman
     document.getElementById('login-page').classList.add('hidden');
     document.getElementById('exam-page').classList.remove('hidden');
-    
+
+    // Jalankan soal pertama
     renderSection();
-    
-    // TAMBAHKAN BARIS INI AGAR DETEKSI AKTIF
-    setupSecurity(); 
 }
     function renderSection() {
     const sec = examData[currentSectionIdx];
