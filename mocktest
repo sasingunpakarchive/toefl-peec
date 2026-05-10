@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TOEFL Structure Test</title>
+
+<style>
+
+body{
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  line-height: 1.7;
+  background: #fafafa;
+}
+
+h1,h2{
+  text-align:center;
+}
+
+.student-box{
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  margin-bottom: 30px;
+}
+
+input{
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing:border-box;
+}
+
+button{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #111;
+  color: white;
+  font-size: 16px;
+}
+
+button:hover{
+  opacity: .9;
+}
+
+.qblock{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:25px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.qhead{
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.opt{
+  display:block;
+  margin:8px 0;
+}
+
+.warning{
+  margin-top:15px;
+  padding:15px;
+  border-radius:8px;
+  background:#ffe4e4;
+  color:#900;
+  font-weight:bold;
+}
+
+#finalScore{
+  margin-top:30px;
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.footer{
+  margin-top:50px;
+  text-align:center;
+  font-size:14px;
+  color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>TOEFL Structure Test</h1>
+
+<div class="student-box">
+
+  <input type="text" id="nama" placeholder="Nama Lengkap">
+  <input type="text" id="npm" placeholder="NPM">
+  <input type="text" id="kelas" placeholder="Kelas">
+
+  <button onclick="startTest()">Mulai Tes</button>
+
+  <div id="warningBox"></div>
+
+</div>
+
+<div id="testArea" style="display:none;">
+
+<h2>Mixed Review</h2>
+
+<div class="quiz">
+
+<div class="qblock">
+<p class="qhead">1. Rarely ______ located near city lights or at lower elevations.</p>
+<label class="opt"><input type="radio" name="r1" value="A"> A. observatories are</label>
+<label class="opt"><input type="radio" name="r1" value="B"> B. are observatories</label>
+<label class="opt"><input type="radio" name="r1" value="C"> C. in the observatories are</label>
+<label class="opt"><input type="radio" name="r1" value="D"> D. observatories</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">2. There are geographic, economic, and cultural reasons why ______ around the world.</p>
+<label class="opt"><input type="radio" name="r2" value="A"> A. diets differ</label>
+<label class="opt"><input type="radio" name="r2" value="B"> B. do diets differ</label>
+<label class="opt"><input type="radio" name="r2" value="C"> C. are diets different</label>
+<label class="opt"><input type="radio" name="r2" value="D"> D. to differ a diet</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">3. Were ______ millions of dollars each year replenishing eroding beaches, the coastline would be changing even more rapidly.</p>
+<label class="opt"><input type="radio" name="r3" value="A"> A. the U.S. Army Corps of Engineers not spending</label>
+<label class="opt"><input type="radio" name="r3" value="B"> B. the U.S. Army Corps of Engineers not spend</label>
+<label class="opt"><input type="radio" name="r3" value="C"> C. the U.S. Army Corps of Engineers does not spend</label>
+<label class="opt"><input type="radio" name="r3" value="D"> D. not spending the U.S. Army Corps of Engineers</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">4. The economic background of labor legislation will not be mentioned in this course, nor ______.</p>
+<label class="opt"><input type="radio" name="r4" value="A"> A. trade unionism will be treated</label>
+<label class="opt"><input type="radio" name="r4" value="B"> B. will trade unionism be treated</label>
+<label class="opt"><input type="radio" name="r4" value="C"> C. will be treated trade unionism</label>
+<label class="opt"><input type="radio" name="r4" value="D"> D. trade unionism treated</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">5. ______ test positive for antibiotics when tanker trucks arrive at a milk-processing plant, according to federal law, the entire truckload must be discarded.</p>
+<label class="opt"><input type="radio" name="r5" value="A"> A. Should milk</label>
+<label class="opt"><input type="radio" name="r5" value="B"> B. If milk should</label>
+<label class="opt"><input type="radio" name="r5" value="C"> C. Should milk be</label>
+<label class="opt"><input type="radio" name="r5" value="D"> D. Milk should</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">6. Located behind ______ the two lacrimal glands.</p>
+<label class="opt"><input type="radio" name="r6" value="A"> A. each eyelid are</label>
+<label class="opt"><input type="radio" name="r6" value="B"> B. each eyelid is</label>
+<label class="opt"><input type="radio" name="r6" value="C"> C. are each eyelid</label>
+<label class="opt"><input type="radio" name="r6" value="D"> D. each eyelid which is</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">7. Nowhere ______ more skewed than in the auto industry.</p>
+<label class="opt"><input type="radio" name="r7" value="A"> A. retail trade figures are</label>
+<label class="opt"><input type="radio" name="r7" value="B"> B. are retail trade figures</label>
+<label class="opt"><input type="radio" name="r7" value="C"> C. retail trade figures</label>
+<label class="opt"><input type="radio" name="r7" value="D"> D. do retail trade figures</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">8. New York City’s Central Park is nearly twice as large as ______, the second-smallest country in the world.</p>
+<label class="opt"><input type="radio" name="r8" value="A"> A. Monaco</label>
+<label class="opt"><input type="radio" name="r8" value="B"> B. is Monaco</label>
+<label class="opt"><input type="radio" name="r8" value="C"> C. Monaco is</label>
+<label class="opt"><input type="radio" name="r8" value="D"> D. as Monaco</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">9. Potassium has a valence of positive one because it usually loses one electron when ______ with other elements.</p>
+<label class="opt"><input type="radio" name="r9" value="A"> A. it combines</label>
+<label class="opt"><input type="radio" name="r9" value="B"> B. does it combine</label>
+<label class="opt"><input type="radio" name="r9" value="C"> C. combining</label>
+<label class="opt"><input type="radio" name="r9" value="D"> D. in combination</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">10. Only for a short period of time ______ run at top speed.</p>
+<label class="opt"><input type="radio" name="r10" value="A"> A. cheetahs</label>
+<label class="opt"><input type="radio" name="r10" value="B"> B. do cheetahs</label>
+<label class="opt"><input type="radio" name="r10" value="C"> C. can cheetahs</label>
+<label class="opt"><input type="radio" name="r10" value="D"> D. cheetahs can</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">11. ______ variety of flowers in the show, from simple carnations to the most exquisite roses.</p>
+<label class="opt"><input type="radio" name="r11" value="A"> A. There was a wide</label>
+<label class="opt"><input type="radio" name="r11" value="B"> B. A wide</label>
+<label class="opt"><input type="radio" name="r11" value="C"> C. Was there</label>
+<label class="opt"><input type="radio" name="r11" value="D"> D. Many</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">12. The wedges ______ dartboard are worth from one to twenty points each.</p>
+<label class="opt"><input type="radio" name="r12" value="A"> A. they are on a</label>
+<label class="opt"><input type="radio" name="r12" value="B"> B. are on a</label>
+<label class="opt"><input type="radio" name="r12" value="C"> C. are they on a</label>
+<label class="opt"><input type="radio" name="r12" value="D"> D. on a</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">13. ______ producing many new movies for release after the new season begins.</p>
+<label class="opt"><input type="radio" name="r13" value="A"> A. His company is</label>
+<label class="opt"><input type="radio" name="r13" value="B"> B. His companies</label>
+<label class="opt"><input type="radio" name="r13" value="C"> C. The company</label>
+<label class="opt"><input type="radio" name="r13" value="D"> D. Why the company is</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">14. Of the 1,800 poems ______, only 24 were given titles and 7 were published during her lifetime.</p>
+<label class="opt"><input type="radio" name="r14" value="A"> A. Emily Dickinson wrote</label>
+<label class="opt"><input type="radio" name="r14" value="B"> B. that Emily Dickinson wrote</label>
+<label class="opt"><input type="radio" name="r14" value="C"> C. Emily Dickinson writing</label>
+<label class="opt"><input type="radio" name="r14" value="D"> D. written by Emily Dickinson were</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">15. Since an immediate change was needed on an emergency basis, ______ by the governor to curtail railway expenditure.</p>
+<label class="opt"><input type="radio" name="r15" value="A"> A. so it was proposed</label>
+<label class="opt"><input type="radio" name="r15" value="B"> B. it was proposed</label>
+<label class="opt"><input type="radio" name="r15" value="C"> C. because of the proposal</label>
+<label class="opt"><input type="radio" name="r15" value="D"> D. was proposed</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">16. In the Morgan Library in New York City ______ of medieval and Renaissance manuscripts.</p>
+<label class="opt"><input type="radio" name="r16" value="A"> A. a collection is</label>
+<label class="opt"><input type="radio" name="r16" value="B"> B. in a collection</label>
+<label class="opt"><input type="radio" name="r16" value="C"> C. is a collection</label>
+<label class="opt"><input type="radio" name="r16" value="D"> D. which is a collection</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">17. Some fishing fleets might not have been so inefficient in limiting their catch to target species ______ more strict in enforcing penalties.</p>
+<label class="opt"><input type="radio" name="r17" value="A"> A. the government had been</label>
+<label class="opt"><input type="radio" name="r17" value="B"> B. if the government had</label>
+<label class="opt"><input type="radio" name="r17" value="C"> C. had the government been</label>
+<label class="opt"><input type="radio" name="r17" value="D"> D. if the government</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">18. The Dewey Decimal System, currently used in libraries throughout the world, ______ all written works into ten classes according to subject.</p>
+<label class="opt"><input type="radio" name="r18" value="A"> A. dividing</label>
+<label class="opt"><input type="radio" name="r18" value="B"> B. divides</label>
+<label class="opt"><input type="radio" name="r18" value="C"> C. it would divide</label>
+<label class="opt"><input type="radio" name="r18" value="D"> D. was divided</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">19. Individual differences in brainwave activity may shed light on why some people are more prone to emotional stress disorders ______.</p>
+<label class="opt"><input type="radio" name="r19" value="A"> A. that others are</label>
+<label class="opt"><input type="radio" name="r19" value="B"> B. and others are</label>
+<label class="opt"><input type="radio" name="r19" value="C"> C. others are</label>
+<label class="opt"><input type="radio" name="r19" value="D"> D. than are others</label>
+</div>
+
+<div class="qblock">
+<p class="qhead">20. ______ squeezed, the orange juice in a one-cup serving provides twice the minimum daily requirement for vitamin C.</p>
+<label class="opt"><input type="radio" name="r20" value="A"> A. It is freshly</label>
+<label class="opt"><input type="radio" name="r20" value="B"> B. You freshly</label>
+<label class="opt"><input type="radio" name="r20" value="C"> C. If freshly</label>
+<label class="opt"><input type="radio" name="r20" value="D"> D. If it freshly</label>
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:40px;">
+<button onclick="submitTest()" id="submitBtn">
+Submit Jawaban
+</button>
+</div>
+
+<div id="finalScore"></div>
+
+</div>
+
+<div class="footer">
+This learning app is adapted from Longman Complete Course for the TOEFL Test by Deborah Phillips and developed by Padel M Rallie Rivaldy
+</div>
+
+<script>
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyaYXTzQgXfoVOpcTw3uCzb0uFgN0RWRWp_L7gnqJvGAA0clsjr4IpdMgxWAEmEJkZ7/exec";
+
+let violations = 0;
+let testStarted = false;
+
+const answers = {
+  r1:"B",
+  r2:"A",
+  r3:"A",
+  r4:"B",
+  r5:"C",
+  r6:"A",
+  r7:"B",
+  r8:"A",
+  r9:"A",
+  r10:"C",
+  r11:"A",
+  r12:"D",
+  r13:"A",
+  r14:"B",
+  r15:"B",
+  r16:"C",
+  r17:"C",
+  r18:"B",
+  r19:"D",
+  r20:"C"
+};
+
+function startTest(){
+
+  const nama = document.getElementById("nama").value.trim();
+  const npm = document.getElementById("npm").value.trim();
+  const kelas = document.getElementById("kelas").value.trim();
+
+  if(!nama || !npm || !kelas){
+    alert("Lengkapi identitas terlebih dahulu.");
+    return;
+  }
+
+  testStarted = true;
+
+  document.getElementById("testArea").style.display = "block";
+
+  window.scrollTo({
+    top: document.getElementById("testArea").offsetTop,
+    behavior: "smooth"
+  });
+
+}
+
+function addViolation(reason){
+
+  if(!testStarted) return;
+
+  violations++;
+
+  document.getElementById("warningBox").innerHTML = `
+    <div class="warning">
+      Pelanggaran terdeteksi: ${reason}<br>
+      Total pelanggaran: ${violations}
+    </div>
+  `;
+
+}
+
+document.addEventListener("visibilitychange", () => {
+
+  if(document.hidden){
+    addViolation("Berpindah tab atau minimize");
+  }
+
+});
+
+window.addEventListener("blur", () => {
+  addViolation("Keluar fokus dari halaman tes");
+});
+
+async function submitTest(){
+
+  const nama = document.getElementById("nama").value.trim();
+  const npm = document.getElementById("npm").value.trim();
+  const kelas = document.getElementById("kelas").value.trim();
+
+  let score = 0;
+
+  for(let key in answers){
+
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+
+    if(selected && selected.value === answers[key]){
+      score++;
+    }
+
+  }
+
+  document.getElementById("submitBtn").disabled = true;
+
+  document.getElementById("finalScore").innerHTML = `
+    <h2>Test Submitted</h2>
+    <p>Score: <strong>${score}/20</strong></p>
+    <p>Total Pelanggaran: <strong>${violations}</strong></p>
+  `;
+
+  const data = {
+    nama: nama,
+    npm: npm,
+    kelas: kelas,
+    skor: score,
+    pelanggaran: violations
+  };
+
+  try {
+
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    console.log("Data berhasil dikirim");
+
+  } catch(error){
+
+    console.log("Error:", error);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
